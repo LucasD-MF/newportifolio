@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.21.0/full/pyodide.js"></script>
+  <script src="./main.js" defer></script>
+  <script src="./translations.js" defer></script>
+  <script type="text/python" src="script.py"></script>
+  
+  <title>Página de boas vindas</title>
+</head>
+<body onload="brython()">
+
+  <!-- Previous Button -->
+  <button data-i18n="prevBtn" id="prev-btn">Anterior</button>
+
+  <!-- Livro -->
+  <div id="book" class="book">
+    <!-- Papel 1 -->
+    <div id="p1" class="paper">
+      <div class="front">
+        <div id="f1" class="front-content">
+          <div class="portfolio-header">
+            <div class="language-switcher">
+              <!-- Bandeira do Brasil -->
+              <img 
+                src="Flag_of_Brazil.svg.png" 
+                alt="Português" 
+                class="flag" 
+                id="flag-br" 
+                onclick="changeLanguage('pt')" 
+              />
+              <!-- Bandeira dos Estados Unidos -->
+              <img 
+                src="Flag_of_the_United_States.svg.png" 
+                alt="English" 
+                class="flag" 
+                id="flag-us" 
+                onclick="changeLanguage('en')" 
+              />
+            </div>
+            <h1 data-i18n="welcome">Bem vindo!</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h4 data-i18n="info">
+              Aqui você encontrará informações sobre meus projetos, <br>
+              habilidades e interesses.
+            </h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h4 data-i18n="by">Por: Lucas de Moura Francisco</h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/lucas-de-moura-francisco/" target="_blank" class="linkedin">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://wa.me/5519971075990" target="_blank" class="whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+              <a href="https://github.com/LucasD-MF" target="_blank" class="github">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="mailto:lucmoufra@gmail.com" target="_blank" class="gmail">
+                <i class="fab fa-google"></i> Gmail
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b1" class="back-content">
+          <h2 data-i18n="aboutMeTitle">Sobre mim</h2>
+          <p data-i18n="aboutMeText">
+            Olá! Meu nome é Lucas de Moura Francisco, estudante de Engenharia de Software.
+            Sou apaixonado por tecnologia e desenvolvimento de soluções 
+            criativas que façam a diferença. <br>
+            <br>
+            Se você tiver interesse em saber mais sobre meu trabalho ou em conversar sobre possíveis colaborações, 
+            fique à vontade para entrar em contato!
+          </p>
+          <h2 data-i18n="skillsTitle">Minhas Habilidades</h2>
+          <ul>
+            <li data-i18n="skill1">Gerenciamento de Software: Planejamento de projetos, gestão de mudanças,<br>
+              gestão de Ciclo de Vida de Software, controle da qualidade, gestão de configuração e processos.</li>
+            <li data-i18n="skill2">Desenvolvimento Web: HTML, CSS, JavaScript</li>
+            <li data-i18n="skill3">Programação: Python, Java, C#, SQL</li>
+            <li data-i18n="skill4">Testes automatizados: Cypress, selenium</li>
+            <li data-i18n="skill5">Hobbies: Modelagem 3D - Blender, Arte digital e pixel art.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Papel 2 -->
+    <div id="p2" class="paper">
+      <div class="front">
+        <br>
+        <h2 data-i18n="project1Title">Projeto 1 - Sistema de descontos</h2>
+        <p data-i18n="project1Desc" id="pnovo">
+          Sistema de descontos integrado, com interface em HTML e cálculos realizados em Python.
+        </p>
+        <ul>
+          <li data-i18n="discountList1">Até 9 produtos: 0% de desconto</li>
+          <li data-i18n="discountList2">De 10 a 99 produtos: 5% de desconto</li>
+          <li data-i18n="discountList3">De 100 a 999 produtos: 10% de desconto</li>
+          <li data-i18n="discountList4">Acima de 1000 produtos: 15% de desconto</li>
+        </ul>
+        <p data-i18n="enterValue" id="pnovo">
+          Digite um valor qualquer, e a quantidade para o desconto ser aplicado:
+        </p>
+        <form id="form">
+          <label data-i18n="labelProduct" for="valor_produto">Valor do Produto:</label>
+          <input type="number" step="0.01" id="valor_produto" required>
+
+          <label data-i18n="labelQuantity" for="quantidade">Quantidade:</label>
+          <input type="number" id="quantidade" required><br>
+
+          <button data-i18n="calculate" type="button" id="calcular-btn" class="buttonovo">Calcular</button>
+        </form>
+        <!-- Resultados do cálculo -->
+        <div id="resultado">
+            <br>
+            <h3 data-i18n="result">Resultado:</h3>
+            <p data-i18n="totalValue" id="valor_total">Valor total: R$ 0,00</p>
+            <p data-i18n="discountedValue" id="valor_com_desconto">Valor com desconto: R$ 0,00</p>
+            <p data-i18n="discount" id="desconto">Desconto: 0%</p>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b2" class="back-content">
+          <br>
+          <br>
+          <h1 data-i18n="project2Title">Projeto 2 - Fila com prioridade</h1>
+          <p data-i18n="project2Desc">
+            Este sistema de fila foi desenvolvido em Python com lista encadeada, 
+            utilizando a biblioteca Tkinter para criar uma interface gráfica simples. 
+            Ele permite inserir pacientes com diferentes tipos de cartões (A/V), 
+            listá-los e chamá-los de acordo com a prioridade. Pacientes com cartão A têm prioridade sobre os com cartão V, 
+            como mostrado na imagem abaixo, onde A 201 é prioritário e V1 é normal.
+          </p>
+          <img src="filahospital.png" alt="fila exemplo" style="width: 70%; height: auto; border-radius: 10px;">
+          <p>
+            <a data-i18n="downloadCode" href="https://github.com/LucasD-MF/fila" target="_blank" id="a1">
+              Clique aqui para baixar o código no GitHub.
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Papel 3 -->
+    <div id="p3" class="paper">
+      <div class="front">
+        <div id="f3" class="front-content">
+          <h2 data-i18n="project3Title">Projeto 3 - Tabela Hash</h2>
+          <br>
+          <p data-i18n="project3Desc" id="pp">
+            O projeto a seguir implementa uma Tabela Hash utilizando listas encadeadas para resolver colisões. O programa permite inserir, 
+            remover e listar siglas de estados brasileiros, armazenando-as em posições calculadas por uma função de hash personalizada.
+          </p>
+          <p data-i18n="hashStructure" id="pp">
+            Estruturas de Dados Utilizadas:
+          </p>
+          <p data-i18n="hashLinkedList" id="pp">
+            Lista Encadeada: Cada posição da tabela hash contém uma lista encadeada para armazenar múltiplas siglas que podem ter o mesmo índice.
+            <br><br>
+            Tabela Hash: Possui um array de tamanho fixo (10 posições), onde cada posição é uma lista encadeada. Função de Hash:
+          </p>
+          <p data-i18n="hashFunction" id="pp">
+            A posição de armazenamento é determinada pela soma dos valores ASCII dos dois caracteres da sigla, aplicada ao módulo 10.
+            Exceção: A sigla "DF" sempre é armazenada na posição 7.
+          </p>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b2" class="back-content">
+          <img src="hash.png" alt="fila exemplo" style="width: 50%; height: 70%; border-radius: 10px;">
+          <p>
+            <a data-i18n="downloadCode" href="https://github.com/LucasD-MF/tabelahash/tree/main" target="_blank" id="a1">
+              Clique aqui para baixar o código no GitHub.
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Papel 4 -->
+    <div id="p4" class="paper">
+      <div class="front">
+        <div id="f4" class="front-content">
+          <h2 data-i18n="project4Title">Projeto 4 - Cofre/Banco</h2>
+          <br>
+          <br>
+          <p data-i18n="project4Desc">
+            Este projeto implementa um cofrinho digital em Java, permitindo armazenar moedas de diferentes países e converter o valor total para reais (BRL). 
+            Ele utiliza herança e polimorfismo para representar diferentes moedas e inclui um validador para garantir entradas corretas.
+          </p>
+          <p><strong data-i18n="features">Funcionalidades:</strong></p>
+          <br>
+          <br>
+          <ul class="tecnologias-lista">
+            <li data-i18n="feature1">Adicionar moedas ao cofrinho (Real, Dólar, Euro)</li>
+            <li data-i18n="feature2">Remover moedas específicas</li>
+            <li data-i18n="feature3">Exibir valores totais por moeda</li>
+            <li data-i18n="feature4">Converter automaticamente todos os valores para Real (BRL)</li>
+            <li data-i18n="feature5">Exibir a sigla do país correspondente à moeda</li>
+            <li data-i18n="feature6">Validar entradas para evitar valores incorretos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b4" class="back-content">
+          <p><strong data-i18n="codeStructure">Estrutura do Código:</strong></p>
+          <br>
+          <ul class="tecnologias-lista">
+            <li data-i18n="codeItem1"><strong>Classe Moeda</strong> Superclasse abstrata que define a estrutura básica de uma moeda</li>
+            <li data-i18n="codeItem2"><strong>Classes Real, Dolar, Euro</strong>  Herdam de Moeda e implementam a conversão para BRL</li>
+            <li data-i18n="codeItem3"><strong>Classe Conversor</strong> Responsável por calcular o valor total convertido</li>
+            <li data-i18n="codeItem4"><strong>Classe Cofrinho</strong> Gerencia as moedas adicionadas e removidas</li>
+            <li data-i18n="codeItem5"><strong>Classe Validador</strong> Verifica se os valores inseridos são válidos</li>
+            <li data-i18n="codeItem6"><strong>Classe Main</strong> Interface principal para interação do usuário</li>
+          </ul>
+          <p><strong data-i18n="technologies">Tecnologias utilizadas:</strong></p>
+          <br>
+          <ul class="tecnologias-lista">
+            <li data-i18n="tech1">Java</li>
+            <li data-i18n="tech2">Programação Orientada a Objetos (POO)</li>
+            <li data-i18n="tech3">Herança e Polimorfismo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Papel 5 -->
+    <div id="p5" class="paper">
+      <div class="front">
+        <div id="b2" class="front-content">
+          <h4 data-i18n="consoleOutput">Exemplo de saída de console:</h4>
+          <br>
+          <img src="cofrinhojava2.png" alt="fila exemplo" style="width: 90%; height: 70%; border-radius: 10px;">
+          <p>
+            <a data-i18n="downloadCode" href="https://github.com/LucasD-MF/cofrinho" target="_blank" id="a1">
+              Clique aqui para baixar o código no GitHub.
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b5" class="back-content">
+          <h1 data-i18n="databaseTitle">Banco de dados</h1>
+          <br>
+          <p data-i18n="databaseDesc" id="pp">
+            Bancos Relacionais (SQL - MySQL): Tenho conhecimento em bancos de dados relacionais, principalmente com MySQL. Sei criar e gerenciar databases, utilizar comandos, definir permissões e remover para usuários, cadastrar e excluir tabelas.
+            <br><br>
+            Também sou capaz de realizar consultas para retornar resultados específicos, utilizando SELECT, JOIN, WHERE e outras cláusulas essenciais.
+            <br><br>
+            Bancos NoSQL: Tenho uma noção básica de bancos de dados NoSQL, com experiência em Neo4j, MongoDB e o DynamoDB. Entendo conceitos como modelagem de grafos no Neo4j, documentos JSON no MongoDB, e o funcionamento de chave-valor e escalabilidade em bancos NoSQL.
+          </p>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <!-- Papel 6 -->
+    <div id="p6" class="paper">
+      <div class="front">
+        <div id="f6" class="front-content">
+          <h1 data-i18n="coursesTitle">Cursos adicionais</h1>
+          <p data-i18n="coursesDesc">
+            Recentemente, venho expandindo minhas habilidades através de cursos especializados, incluindo:
+          </p>
+          <ul>
+            <li data-i18n="course1">
+              <strong>Cypress para Testes Automatizados:</strong> Aprendizado sobre automação de testes end-to-end para garantir a qualidade e estabilidade de aplicações web.
+            </li>
+            <li data-i18n="course2">
+              <strong>HTML:</strong> Fortalecimento das bases de desenvolvimento web, focando em estruturação semântica e boas práticas de acessibilidade.
+            </li>
+            <li data-i18n="course3">
+              <strong>Figma:</strong> Desenvolvimento de habilidades em design de interfaces, criação de layouts e protótipos interativos de alta qualidade.
+            </li>
+            <li data-i18n="course4">
+              <strong>Power BI:</strong> Aperfeiçoamento na análise e visualização de dados, criando relatórios e dashboards interativos para facilitar a tomada de decisões.
+            </li>
+            <li data-i18n="course5">
+              <strong>Python:</strong> Formação sólida na linguagem de programação Python, com ênfase em automação, análise de dados e desenvolvimento web.
+            </li>
+            <li data-i18n="course6">
+              <strong>Inglês (Aulas Particulares):</strong> Estudo contínuo do inglês para aprimorar minhas habilidades de comunicação e expandir meu alcance profissional.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b2" class="back-content">
+          <br>
+          <h2 data-i18n="cypressTestTitle">Teste automatizado no Cypress</h2>
+          <p data-i18n="cypressTestDesc">
+            Em 2025, iniciei minha jornada no aprendizado do Cypress, uma poderosa ferramenta para testes automatizados, com o objetivo de aprimorar minhas habilidades em garantir a qualidade e a estabilidade das aplicações web.
+          </p>
+          <h3 data-i18n="checkHtmlTitle" id="pp">Verificação de um título html:</h3>
+          <img src="testecypress.png" alt="fila exemplo" style="width: 80%; height: 75%; border-radius: 10px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Papel 7 -->
+    <div id="p7" class="paper">
+      <div class="front">
+        <div id="f7" class="front-content">
+          <br>
+          <br>
+          <br>
+          <h1 data-i18n="hobbiesTitle">Hobbies</h1>
+          <br>
+          <div class="image-container">
+            <img src="gbnew.png" alt="Imagem a2" style="width: 80%; height: 80%; border-radius: 10px;">
+            <a href="https://www.artstation.com/lucasdemourafrancisco6" target="_blank" class="artstation-link">
+              <br><br>
+              <i class="fab fa-artstation"></i> ArtStation
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b7" class="back-content">
+          <h4 data-i18n="journey">"A jornada continua..."</h4>
+          <p data-i18n="journeyDesc">
+            Este portfólio representa um momento em minha trajetória profissional, mas como qualquer projeto, está sempre em constante evolução. Meu aprendizado não tem fim, e estou sempre aberto(a) a novos desafios, descobertas e colaborações.
+            <br><br>
+            Obrigado por explorar meu trabalho. Vamos conversar sobre como posso contribuir para o seu próximo projeto.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/lucas-de-moura-francisco/" target="_blank" class="linkedin">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://wa.me/5519971075990" target="_blank" class="whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://github.com/LucasD-MF" target="_blank" class="github">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:lucmoufra@gmail.com" target="_blank" class="gmail">
+              <i class="fab fa-google"></i> Gmail
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next Button -->
+  <button data-i18n="nextBtn" id="next-btn">Próximo</button>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: url('cyber.jpg'); /* Defina o caminho para a sua imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    text-align: center; /* Centraliza o conteúdo de texto */
+}
+
+h1,h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff5f8a, #feb47b); /* Gradiente do texto */
+    -webkit-background-clip: text; /* Necessário para o Chrome e Safari */
+    background-clip: text; /* Para outros navegadores */
+    color: transparent; /* Torna o texto transparente para que o gradiente apareça */
+    display: inline-block; /* Faz o texto se comportar como um bloco, mas ainda se ajustar ao conteúdo */
+
+    margin: 0 auto; /* Garante que o título fique centralizado dentro do bloco */
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif; /* Altere a fonte conforme necessário */
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(to right,#ff5f5f, #e263d5);  /* Gradiente do texto */
+    -webkit-background-clip: text; /* Necessário para o Chrome e Safari */
+    background-clip: text; /* Para outros navegadores */
+    color: transparent; /* Torna o texto transparente para que o gradiente apareça */
+    display: inline-block; /* Faz o texto se comportar como um bloco, mas ainda se ajustar ao conteúdo */
+
+    margin: 0 auto; /* Garante que o título fique centralizado dentro do bloco */
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 750px;
+    height: 600px;
+    transition: transform 0.5s;
+    border-radius: 12px; /* Bordas arredondadas */
+    
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Sombra para profundidade */
+    
+    
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna */
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg);
+    
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+    
+}
+
+/* Controller Buttons */
+/* Botões */
+button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 4;
+}
+
+#prev-btn {
+    left: 10px;
+}
+
+#next-btn {
+    right: 10px;
+}
+/* Paper stack order */
+#p1 {
+    z-index: 7;
+}
+
+#p2 {
+    z-index: 6;
+}
+
+#p3 {
+    z-index: 5;
+}
+
+#p4 {
+    z-index: 4;
+}
+
+#p5 {
+    z-index: 3;
+}
+
+#p6 {
+    z-index: 2;
+}
+
+
+#p7 {
+    z-index: 1;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: #0077b5; /* Cor do LinkedIn */
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.social-links .whatsapp:hover {
+    color: #25d366; /* Cor do WhatsApp */
+}
+
+.social-links .github:hover {
+    color: #b12db5; /* Cor do GitHub */
+}
+
+.social-links .gmail:hover {
+    color: #C1351D; /* Cor do fundo mais escura */
+}
+
+.language-switcher {
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    display: flex; /* Exibe as bandeiras lado a lado */
+    gap: 10px; /* Espaço entre as bandeiras */
+}
+
+.flag {
+    width: 30px; /* Largura das bandeiras */
+    height: 20px; /* Altura das bandeiras */
+    cursor: pointer; /* Mostra o cursor como clicável */
+    border: 1px solid #ccc; /* Opcional: borda para destacar */
+    border-radius: 3px; /* Suaviza os cantos */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animação ao passar o mouse */
+}
+
+.flag:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente no hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+}
+
+ul {
+    margin: 20px auto; /* Margem superior e inferior e centraliza a lista */
+    text-align: left; /* Alinha o texto à esquerda */
+    width: 80%; /* Largura definida para a lista, ajustando ao conteúdo */
+    list-style-position: inside; /* Alinha os marcadores com o texto */
+    padding-left: 20px; /* Ajusta o recuo da lista para dar um bom espaçamento */
+}
+
+li {
+    padding: 5px 0; /* Espaçamento entre os itens */
+    font-size: 1rem; /* Tamanho de fonte ajustável */
+    line-height: 1.6; /* Melhor legibilidade entre os itens */
+}
+
+p {
+    margin: 20px auto; /* Define uma margem e centraliza */
+    text-align: justify; /* Justifica o texto para que ele ocupe todo o espaço disponível */
+    line-height: 1.6; /* Melhora a legibilidade */
+    font-size: 1rem; /* Tamanho de fonte ajustável */
+    width: 80%; /* Define uma largura para o parágrafo */
+}
+
+p:last-child {
+    text-align: right; /* Alinha o último parágrafo à direita */
+}
+
+#pp {
+    margin: 20px auto; /* Define uma margem e centraliza */
+    text-align: justify; /* Justifica o texto para que ele ocupe todo o espaço disponível */
+    line-height: 1.6; /* Melhora a legibilidade */
+    font-size: 1rem; /* Tamanho de fonte ajustável */
+    width: 80%; /* Define uma largura para o parágrafo */
+}
+
+#pnovo {
+    margin-left: 100px; /* Define a margem específica para a esquerda */
+  }
+
+  .buttonovo {
+    margin-top: 240px;
+}
+
+#b2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+}
+
+#b2 img {
+    width: 70%;
+    height: auto;
+    border-radius: 3px;
+    border: 3px solid #9cddd1; /* Contorno na imagem, você pode ajustar a cor e a espessura */
+}
+
+#a1 {
+    text-align: center;
+    display: block; /* Faz o link se comportar como um bloco, assim ele pode ser alinhado */
+}
+
+p strong {
+    margin-bottom: -10px; /* Remove a margem inferior do título */
+    background: linear-gradient(to right, #ff5f5f, #e263d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tecnologias-lista {
+    margin-top: -10px; /* Remove a margem superior da lista */
+    padding-left: 1em; /* Ajusta o recuo da lista, se necessário */
+}
+pre {
+    text-align: left; /* Alinha o texto dentro do <pre> */
+    margin-left: -70px; /* Remove qualquer margem extra */
+    padding-left: -50px; /* Garante que não tenha recuo interno */
+}
+pre code {
+    text-align: left;
+    margin-left: -50px;
+}
