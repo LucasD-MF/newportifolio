@@ -1,0 +1,87 @@
+@media (max-width: 768px) {
+    .book {
+      perspective: none !important;
+      transform: none !important;
+      width: 100% !important;
+      min-height: 100vh !important;
+      overflow: auto !important;
+      position: relative !important;
+      margin: 0 !important;
+    }
+  
+    /* Empilha front e back verticalmente, com espaço entre eles */
+    .paper {
+      display: flex !important;
+      flex-direction: column !important;
+      /* Cria espaço entre front e back */
+      gap: 20px !important;
+      
+      width: 100% !important;
+      height: auto !important;
+      /* Cria espaço entre cada paper */
+      margin: 30px 0 !important;
+      
+      position: relative !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  
+    .paper.flipped {
+      transform: none !important;
+    }
+  
+    /* Remove posição absoluta e flip das faces */
+    .paper .front,
+    .paper .back {
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      transform: none !important;
+      backface-visibility: visible !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  
+    /* Remove qualquer transform do back e seus filhos */
+    .paper .back,
+    .paper .back * {
+      transform: none !important;
+      backface-visibility: visible !important;
+    }
+  
+    /* Exibe o back no mobile */
+    .paper .back {
+      display: block !important;
+    }
+  
+    /* Força que .front-content e .back-content 
+       tenham largura máxima e quebrem links/palavras */
+    .front-content, 
+    .back-content {
+      max-width: 100%;
+      /* Se quiser fundo branco e espaçamento interno */
+      /* background-color: #fff; */
+      /* padding: 20px; */
+  
+      /* Garante quebra de links/palavras muito longas */
+      white-space: normal !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      word-break: break-word !important;
+    }
+  
+    /* Ajuste do botão Calcular */
+    #calcular-btn {
+      position: static !important;
+      display: inline-block !important;
+      margin: 30px auto !important;
+    }
+  
+    /* Oculta os botões Anterior/Próximo no mobile */
+    #prev-btn,
+    #next-btn {
+      display: none !important;
+    }
+  }
+  
