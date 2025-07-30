@@ -80,7 +80,7 @@ const translations = {
       info: "Here you will find information about my projects, skills, and interests.",
       by: "By: Lucas de Moura Francisco",
       aboutMeTitle: "About me",
-      aboutMeText: "Hello! My name is Lucas de Moura Francisco, a Software Engineering student. I am passionate about technology and developing creative solutions that make a difference. A recent example is this <a href=\"https://www.youtube.com/watch?v=rRCSzUnKumw\" target=\"_blank\">CRUD  I developed.</a>. If you're interested in learning more about my work or discussing potential collaborations, feel free to reach out!",
+      aboutMeText: "Hello! My name is Lucas de Moura Francisco, a Software Engineering student. I am passionate about technology and developing creative solutions that make a difference. A recent example is this <a href=\"https://www.youtube.com/watch?v=rRCSzUnKumw\" target=\"_blank\">CRUD  I developed.</a> If you're interested in learning more about my work or discussing potential collaborations, feel free to reach out!",
       skillsTitle: "My Skills",
       skill1: "Software Management: Project planning, change management, Software Lifecycle management, quality control, configuration management and processes.",
       skill2: "Web Development: HTML, CSS, JavaScript",
