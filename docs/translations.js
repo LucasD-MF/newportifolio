@@ -6,7 +6,7 @@ const translations = {
       info: "Aqui você encontrará informações sobre meus projetos,<br> habilidades e interesses.",
       by: "Por: Lucas de Moura Francisco",
       aboutMeTitle: "Sobre mim",
-      aboutMeText: "Olá! Meu nome é Lucas de Moura Francisco, estudante de Engenharia de Software.<br><br>Sou apaixonado por tecnologia e desenvolvimento de soluções criativas que façam a diferença. <br><br>Se você tiver interesse em saber mais sobre meu trabalho ou em conversar sobre possíveis colaborações, fique à vontade para entrar em contato!",
+       aboutMeText: "Olá! Meu nome é Lucas de Moura Francisco, estudante de Engenharia de Software.<br><br>Sou apaixonado por tecnologia e desenvolvimento de soluções criativas que façam a diferença. <br><br>Um exemplo recente é este <a href=\"https://www.youtube.com/watch?v=rRCSzUnKumw\" target=\"_blank\">CRUD que desenvolvi</a>.. Se você tiver interesse em saber mais sobre meu trabalho ou em conversar sobre possíveis colaborações, fique à vontade para entrar em contato!",
       skillsTitle: "Minhas Habilidades",
       skill1: "Gerenciamento de Software: Planejamento de projetos, gestão de mudanças,<br> gestão de Ciclo de Vida de Software, controle da qualidade, gestão de configuração e processos.",
       skill2: "Desenvolvimento Web: HTML, CSS, JavaScript",
@@ -71,7 +71,7 @@ const translations = {
       checkHtmlTitle: "Verificação de um título html:",
       hobbiesTitle: "Hobbies",
       journey: "\"A jornada continua...\"",
-      journeyDesc: "Este portfólio representa um momento em minha trajetória profissional, mas como qualquer projeto, está sempre em constante evolução. Meu aprendizado não tem fim, e estou sempre aberto(a) a novos desafios, descobertas e colaborações. <br><br>Obrigado por explorar meu trabalho. Vamos conversar sobre como posso contribuir para o seu próximo projeto.",
+      journeyDesc: "Este portfólio representa um momento em minha trajetória profissional, mas como qualquer projeto, está sempre em constante evolução. Meu aprendizado não tem fim, e estou sempre aberto a novos desafios, descobertas e colaborações. <br><br>Obrigado por explorar meu trabalho. Vamos conversar sobre como posso contribuir para a sua empresa.",
       nextBtn: "Próximo"
     },
     en: {
@@ -80,7 +80,7 @@ const translations = {
       info: "Here you will find information about my projects, skills, and interests.",
       by: "By: Lucas de Moura Francisco",
       aboutMeTitle: "About me",
-      aboutMeText: "Hello! My name is Lucas de Moura Francisco, a Software Engineering student. I am passionate about technology and developing creative solutions that make a difference. If you're interested in learning more about my work or discussing potential collaborations, feel free to reach out!",
+      aboutMeText: "Hello! My name is Lucas de Moura Francisco, a Software Engineering student. I am passionate about technology and developing creative solutions that make a difference. A recent example is this <a href=\"https://www.youtube.com/watch?v=rRCSzUnKumw\" target=\"_blank\">CRUD que desenvolvi</a>.. If you're interested in learning more about my work or discussing potential collaborations, feel free to reach out!",
       skillsTitle: "My Skills",
       skill1: "Software Management: Project planning, change management, Software Lifecycle management, quality control, configuration management and processes.",
       skill2: "Web Development: HTML, CSS, JavaScript",

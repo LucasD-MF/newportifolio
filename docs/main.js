@@ -203,4 +203,5 @@ function isMobile() {
   if (isMobile()) {
     initializeMobile();
   }
+
   

@@ -135,6 +135,7 @@ button {
 /* Paper stack order */
 #p1 {
     z-index: 7;
+    
 }
 
 #p2 {
@@ -296,4 +297,12 @@ pre {
 pre code {
     text-align: left;
     margin-left: -50px;
+}
+
+.paper.flipped {
+  pointer-events: none;
+}
+
+.paper.flipped a {
+  pointer-events: auto;
 }
